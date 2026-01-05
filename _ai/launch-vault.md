@@ -282,19 +282,25 @@ After any restart, context reset, or compaction, you MUST re-read `_ai/constitut
 before continuing. If you cannot confirm it is loaded, STOP and ask for confirmation.
 ```
 
-### 5.2 Claude Code Enforcement (Replace System Prompt)
+### 5.2 Claude Code Enforcement (CLAUDE.md or Append System Prompt)
 
-When using Claude Code CLI, the Constitution must be loaded by replacing the entire system prompt with the contents of _ai/constitution.md.
+Claude Code supports instruction files (`CLAUDE.md`) and system prompt flags. For CLI and VS Code usage, the Constitution must be loaded via one of the approved methods below.
 
 Required behavior:
-- Always start Claude Code with `--system-prompt` so the default prompt is fully replaced.
-- The injected system prompt must contain the full contents of `_ai/constitution.md`.
-- After any agent restart, re-run Claude Code with the same `--system-prompt` injection.
+- Prefer a repo-root `CLAUDE.md` that includes the full contents of `_ai/constitution.md` (paste the full text, do not just reference the path).
+- If using CLI flags instead, use `--append-system-prompt` with the full contents of `_ai/constitution.md`.
+- After any agent restart, ensure the Constitution is loaded again (via `CLAUDE.md` or the same flag injection).
 
-Example:
+Example (`CLAUDE.md` at repo root):
+
+```md
+[Paste the full contents of _ai/constitution.md here]
+```
+
+Example (CLI):
 
 ```sh
-claude --system-prompt "$(cat _ai/constitution.md)"
+claude --append-system-prompt "$(cat _ai/constitution.md)"
 ```
 
 ### 5.3 Universal Stop Condition
