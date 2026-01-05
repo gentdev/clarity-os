@@ -1,141 +1,96 @@
-# Clarity OS — README
+# Clarity OS
 
-Clarity OS is a focused personal operating system for knowledge work.
-It provides a structured way to think, make decisions, and execute without mixing tasks and knowledge or accumulating unnecessary notes.
+A decision-first personal operating system for knowledge work.
 
-This template is intended for professionals who deal with complex projects, high information load, and ambiguous decisions and who want to use AI to accelerate processing without outsourcing judgment.
+Clarity OS helps you think clearly, make explicit decisions, and execute without mixing tasks and knowledge or accumulating unnecessary notes.
 
-It is not a productivity system, task manager, or note-taking method. It's a lightweight framework for project control, sensemaking, and explicit decision-making.
+This repository contains a **template and conventions**, not a product or automation layer.
 
-## Who this is for
+---
 
-Clarity OS is designed for professionals who:
+## Quick start (10 minutes)
 
-- work on complex, ambiguous projects
-- deal with high information load
-- need to make consequential decisions regularly
-- want to use AI to accelerate processing **without replacing their own thinking**
+### 1. Prerequisites
+Install:
+- **Obsidian** — https://obsidian.md  
+- **Visual Studio Code** — https://code.visualstudio.com  
+- **AI agent** (choose one):
+  - **Codex** — https://platform.openai.com/docs/guides/codex
+  - **Claude Code** — https://docs.anthropic.com/en/docs/claude-code
 
-Typical users include:
-- senior individual contributors
-- managers and leaders
-- founders and operators
-- knowledge workers who feel productive but not always clear
+---
 
+### 2. Create your vault
+Ask your AI agent to execute: _ai/launch-vault.md
 
-## Key insights
+This initializes:
+- folder structure
+- canonical templates
+- AI guardrails
 
-- Markdown is the single source of truth; the human remains the final authority.
-- The AI is a sparring partner: precise, critical, and grounded in user input.
-- The operating model is Capture → Sensemaking → Decide → Execute, with clear pitfalls.
-- Guardrails prevent autonomous restructuring, decision-making, or knowledge creation.
-- Decisions are documented explicitly and tied to projects or dedicated decision notes.
-- Clarity beats speed; minimal, explicit output is preferred over volume.
+Do not create folders or templates manually.
 
-For the underlying philosophy and principles, see [`manifesto.md`](./manifesto.md).
+---
 
-## The operating model
+### 3. Read the principles
+Before using the system, read: manifesto.md
 
-This workflows follow this sequence: Capture → Sensemaking → Decide → Execute
+This explains the underlying philosophy and guardrails.
 
-Common failure modes:
-- Capture too richly → clutter
-- Sensemaking without reduction → noise
-- Decisions without documentation → drift
-- Tasks without decisions → motion without progress
+---
 
-The system is designed to surface and correct these failure modes early.
+### 4. Start using the system
+- Capture raw input into `00_Inbox/`
+- Use your AI agent to distil, analyse, and propose next steps
+- Decide explicitly
+- Execute tasks outside Obsidian
 
-## How to get started (first-time users)
+You always remain the final authority.
 
-### Prerequisites
+---
 
-Install and configure the following tools:
+## What this system is (and is not)
 
-- **Obsidian**  
-  https://obsidian.md  
-  Used as the primary environment for notetaking, thinking, sensemaking, and project control.
+**Clarity OS is:**
+- decision-driven
+- minimal by design
+- AI-assisted, not AI-operated
 
-- **Visual Studio Code**  
-  https://code.visualstudio.com  
-  Used as the working environment for AI-assisted analysis and interaction.
+**Clarity OS is not:**
+- a productivity system
+- a task manager
+- a second brain
+- a note archive
 
-- **AI agent (one of the following):**
-  - **Codex (CLI + VS Code integration)**  
-    https://developers.openai.com/codex/quickstart/
-  - **Claude Code**  
-    https://code.claude.com/docs/en/setup
+If your goal is to track more tasks or store more information, this system will feel restrictive.
 
-  The AI agent is required to analyze notes, distil insights, and propose next steps, always under explicit guardrails.
+---
 
+## Operating model 
+Capture → Sensemaking → Decide → Execute
 
-### Step 1 — Create your vault
-Ask your AI agent to execute the following file: _ai/launch-vault.md
+- Capture is raw and temporary  
+- Sensemaking reduces and distils  
+- Decisions are explicit  
+- Tasks exist only to support decisions or execution  
 
-This will:
-- create the folder structure
-- install canonical templates
-- initialize AI-related guardrails
+Details and rationale live in `manifesto.md`.
 
-⚠️ Do not create folders or templates manually.
+---
 
-### Step 2 — Read the manifesto
-Before using the system, read:
+## Tool boundaries
 
-This explains the principles behind Clarity OS and how to use it without turning it into another productivity system.
+- **Obsidian** — thinking, sensemaking, project control  
+- **AI agent (Codex / Claude Code)** — analysis, distillation, challenge  
+- **Todoist (or equivalent)** — execution only  
 
-### Step 3 — Identify your projects and start capturing
-Capture information in your notes. 
+No overlap. No duplication.
 
-P.S. Use QuickAdd in Obsidian to capture faster using templates:
-- thoughts
-- meetings
-- articles
-
-All capture is **raw and temporary** and goes into `00_Inbox/`.
-
-Do not organize during capture.
-
-### Step 4 — Interact using your AI agent
-
-Use your AI agent (Codex or Claude Code) to actively work with your vault:
-
-- form understanding from raw input
-- analyse context and surface assumptions
-- distil insights into knowledge notes
-- identify decisions and trade-offs
-- propose project updates and next actions
-
-The agent may:
-- summarise
-- connect
-- challenge
-- propose
-
-The agent may **not**:
-- decide on your behalf
-- modify files autonomously
-- restructure the vault without approval
-
-All outputs are proposals. You remain the final authority.
-
-## Reusable AI “skills” (recommended)
-
-If you notice yourself repeating the same prompts:
-
-- create reusable **skills** or prompt snippets
-- store them in your AI tool of choice (Codex / Claude Code)
-- treat them as **personal workflows**, not automation
-
-Examples:
-- “Inbox → distillation”
-- “Project clarity check”
-- “Decision framing”
-- “Weekly inbox review"
-
+---
 
 ## Vault structure (high level)
-``` 
+
+```
 00_Inbox/        # Raw, temporary capture
 10_Projects/     # Active projects with target conditions & decisions
 20_Knowledge/    # Distilled, reusable understanding
@@ -144,130 +99,42 @@ Examples:
 90_Archive/      # Inactive material
 99_Templates/    # Canonical templates only
 _ai/             # AI constitution, prompts, launch instructions
-``` 
+```
+Each note lives in exactly one folder.
+
 ## What defines an active project
 
-An active project is strictly defined as:
+An active project is:
+- a deliberate effort with a clear target condition
+- at least one open core decision
 
-> A deliberate effort with a clear target condition  
-> and at least one open core decision.
+Projects exist to resolve uncertainty, not to manage tasks.
 
-Projects exist to **resolve uncertainty**, not to hold tasks.
+---
 
-A project is done when the relevant decisions are made.
+## Using AI (practical)
 
-## Obsidian setup — configuration & plugins
+Use your AI agent to help you:
+- distil raw input
+- surface assumptions
+- frame decisions
+- propose next actions
 
-This vault is intentionally configured to support clear thinking, explicit decisions, and low-friction execution.
-The setup is minimal by design: few plugins, strict boundaries, and predictable behavior.
+Reusable prompts ("skills") are encouraged for workflows you repeat often.
 
-### Key Obsidian settings
+## Guardrails
 
-**Files & Links**
-- New notes are created in the current folder.
-- Links use standard Markdown (no WikiLinks).
-- Relative paths are enabled for portability.
-- File extensions are always detected.
+- Markdown files are the source of truth
+- AI never edits files autonomously
+- All changes are proposed first
+- Tasks live outside Obsidian
 
-**Attachments**
-- Attachments are stored per folder in a local `_assets/` directory.
-- No global attachment dump.
-- Attachments are references, not content.
+Enforced via: `_ai/constitution.md`
 
-Example:
-```
-10_Projects/
-Project — Example.md
-_assets/
-diagram.png
-```
+## License
 
-**Templates**
-- Templates are stored in `99_Templates/`.
-- Templates are used only for project notes and knowledge notes.
-- No daily note templates.
-- No creative or decorative templates.
+MIT License.
 
-Templates enforce consistency, not creativity.
+This repository provides a framework and templates only.
+No advice, guarantees, or outcomes are implied.
 
-### Installed plugins
-
-Only plugins that reduce friction or enforce discipline are enabled.
-
-**Templater**
-- Injects dates.
-- Standardizes frontmatter.
-- Avoids copy-paste errors.
-
-No scripting or advanced logic.
-
-**QuickAdd**
-Used exclusively for capture:
-- Inbox — Thought
-- Inbox — Meeting
-- Inbox — Article
-
-All QuickAdd actions:
-- Write to `00_Inbox/`.
-- Create raw, unstructured notes.
-- Avoid premature classification.
-
-Capture is intentionally dumb.
-
-**Linter**
-Used lightly to enforce:
-- Consistent frontmatter order.
-- Clean formatting.
-
-No aggressive auto-formatting.
-
-**Git (optional but recommended)**
-Used for:
-- Version control.
-- Rollback safety.
-- AI-assisted editing confidence.
-
-Commits are manual and intentional.
-
-**Dataview (optional, used sparingly)**
-Introduced only after the system is stable.
-
-Used for:
-- Listing active projects.
-- Reviewing open decisions.
-
-Not used for dashboards, KPIs, or analytics.
-
-### Explicitly not installed
-
-- Canvas
-- Daily Notes
-- Task management plugins
-- Calendar plugins
-- Graph-focused plugins
-- AI plugins inside Obsidian
-
-We don't use Obsidian as a task manager, calendar, or AI playground.
-
-## Operating boundaries
-
-- Inbox notes are temporary and processed weekly.
-- Projects are scarce and decision-driven.
-- Knowledge must be reusable to stay active.
-- Tasks live outside Obsidian.
-
-If something feels unclear, the system favors clarity over speed.
-
-This configuration is stable, portable, and AI-compatible by design.
-
-## Optional integrations and extensions
-
-- Todoist MCP integration to fetch and push actionable tasks
-- Reusable skills to automate analysis and next-step generation (e.g., “analyze project and generate actions”).
-
-# Disclaimer
-Licensed under the MIT License.
-
-This project provides a framework and templates. Adapt to your liking.
-
-It does not provide advice, guarantees, or outcomes.
