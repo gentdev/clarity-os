@@ -15,11 +15,12 @@ Install:
 - **AI agent** (choose one):
   - **Codex** — https://platform.openai.com/docs/guides/codex
   - **Claude Code** — https://docs.anthropic.com/en/docs/claude-code
+(!) A live subscription is necessary to integrate the AI agent in the workflow. 
 
 ---
 
 ### 2. Create your vault
-Ask your AI agent to execute: _ai/launch-vault.md
+Ask your AI agent to execute: `_ai/launch-vault.md`
 
 This initializes:
 - folder structure
@@ -31,7 +32,7 @@ Do not create folders or templates manually.
 ---
 
 ### 3. Read the principles
-Before using the system, read: manifesto.md
+Before using the system, read: `manifesto.md`
 
 This explains the underlying philosophy and guardrails.
 
@@ -82,8 +83,6 @@ Details and rationale live in `manifesto.md`.
 - **AI agent (Codex / Claude Code)** — analysis, distillation, challenge  
 - **Todoist (or equivalent)** — execution only  
 
-No overlap. No duplication.
-
 ---
 
 ## Vault structure (high level)
@@ -112,22 +111,24 @@ Projects exist to resolve uncertainty, not to manage tasks.
 
 ## Using AI (practical)
 
-Use your AI agent to help you:
+Interact with your AI agent to help you:
 - distil raw input
 - surface assumptions
 - frame decisions
 - propose next actions
 
-Reusable prompts ("skills") are encouraged for workflows you repeat often.
+Create reusable prompts through skills for jobs you repeat often.
+
+Extend your AI agent capabilities through MCP integrations.
 
 ## Guardrails
 
 - Markdown files are the source of truth
 - AI never edits files autonomously
-- All changes are proposed first
-- Tasks live outside Obsidian
 
 Enforced via: `_ai/constitution.md`
+
+We highly advise integrating git for tracking and version control. 
 
 ## License
 
