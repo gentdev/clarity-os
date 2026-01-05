@@ -84,8 +84,10 @@ Before using the system, read:
 
 This explains the principles behind Clarity OS and how to use it without turning it into another productivity system.
 
-### Step 3 — Start capturing
-Use QuickAdd in Obsidian to capture:
+### Step 3 — Identify your projects and start capturing
+Capture information in your notes. 
+
+P.S. Use QuickAdd in Obsidian to capture faster using templates:
 - thoughts
 - meetings
 - articles
@@ -158,15 +160,6 @@ A project is done when the relevant decisions are made.
 
 This vault is intentionally configured to support clear thinking, explicit decisions, and low-friction execution.
 The setup is minimal by design: few plugins, strict boundaries, and predictable behavior.
-
-### Core configuration principles
-
-- Markdown is the source of truth.
-- Structure over automation.
-- Discipline over convenience.
-- No duplication between thinking and execution tools.
-
-Obsidian is used for project control and sensemaking, not for task management or dashboards.
 
 ### Key Obsidian settings
 
@@ -254,9 +247,9 @@ Not used for dashboards, KPIs, or analytics.
 - Graph-focused plugins
 - AI plugins inside Obsidian
 
-Obsidian is not a task manager, calendar, or AI playground.
+We don't use Obsidian as a task manager, calendar, or AI playground.
 
-### Operating boundaries
+## Operating boundaries
 
 - Inbox notes are temporary and processed weekly.
 - Projects are scarce and decision-driven.
