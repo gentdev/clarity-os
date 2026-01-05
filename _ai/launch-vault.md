@@ -236,3 +236,72 @@ Optionally create the following empty placeholders:
 
 Do not introduce additional folders, templates, or taxonomies
 unless explicitly instructed.
+
+## 5. Mandatory Constitution Enforcement (Non-Negotiable)
+
+This vault is governed by the AI Constitution located at:
+_ai/constitution.md
+
+The Constitution is binding and takes precedence over convenience, speed, defaults, and inferred intent.
+
+---
+
+### 5.1 Codex Enforcement (AGENTS.md is Mandatory)
+
+Codex enforces project behavior through `AGENTS.md` / `AGENTS.override.md`, which it reads automatically before doing any work.  
+
+Therefore, every launched vault MUST include a repo-root agent file that injects the Constitution.
+
+#### Required file
+Create the following at the repository root:
+- `AGENTS.md`
+
+#### Required content
+Populate the repo-root agent file with:
+
+1) A directive to treat `_ai/constitution.md` as binding.
+2) A rule that **no file edits happen without proposal + explicit user confirmation**.
+3) A restart rule: after any restart/compaction/context loss, re-read `_ai/constitution.md` before continuing.
+
+**Minimum required wording (copy/paste into `AGENTS.md`):**
+
+```md
+# Codex Project Instructions (Binding)
+
+This repository is governed by `_ai/constitution.md`.
+
+## Mandatory rule
+Before doing any work, read `_ai/constitution.md` and follow it as binding instructions.
+
+## Propose-first rule
+You may propose changes (diffs/plans). You may NOT apply changes autonomously.
+If you are about to create/edit/restructure files, you MUST ask for explicit confirmation first.
+
+## Restart rule
+After any restart, context reset, or compaction, you MUST re-read `_ai/constitution.md`
+before continuing. If you cannot confirm it is loaded, STOP and ask for confirmation.
+```
+
+### 5.2 Claude Code Enforcement (Replace System Prompt)
+
+When using Claude Code CLI, the Constitution must be loaded by replacing the entire system prompt with the contents of _ai/constitution.md.
+
+Required behavior:
+- Always start Claude Code with `--system-prompt` so the default prompt is fully replaced.
+- The injected system prompt must contain the full contents of `_ai/constitution.md`.
+- After any agent restart, re-run Claude Code with the same `--system-prompt` injection.
+
+Example:
+
+```sh
+claude --system-prompt "$(cat _ai/constitution.md)"
+```
+
+### 5.3 Universal Stop Condition
+
+If the agent cannot confirm that the Constitution is loaded and active:
+- It MUST stop.
+- State the uncertainty explicitly.
+- Request confirmation before proceeding.
+
+No Constitution → No Action
