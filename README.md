@@ -133,7 +133,7 @@ Examples:
 
 
 ## Vault structure (high level)
-
+``` 
 00_Inbox/        # Raw, temporary capture
 10_Projects/     # Active projects with target conditions & decisions
 20_Knowledge/    # Distilled, reusable understanding
@@ -142,7 +142,7 @@ Examples:
 90_Archive/      # Inactive material
 99_Templates/    # Canonical templates only
 _ai/             # AI constitution, prompts, launch instructions
-
+``` 
 ## What defines an active project
 
 An active project is strictly defined as:
