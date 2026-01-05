@@ -4,8 +4,6 @@ A decision-first personal operating system for knowledge work.
 
 Clarity OS helps you think clearly, make explicit decisions, and execute without mixing tasks and knowledge or accumulating unnecessary notes.
 
-This repository contains a **template and conventions**, not a product or automation layer.
-
 ---
 
 ## Quick start (10 minutes)
