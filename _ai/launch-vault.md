@@ -20,6 +20,7 @@ Create the following folder structure exactly as written:
 90_Archive/
 99_Templates/
 _ai/
+skills/
 ```
 
 ### Semantic Meaning
@@ -47,6 +48,9 @@ _ai/
 
 - **_ai**  
   AI constitution, prompts, and pattern references.
+
+- **skills**  
+  Reusable AI skills (one folder per skill, each containing `SKILL.md`).
 
 Each note must live in **exactly one folder**.
 
@@ -227,7 +231,40 @@ Optionally create the following empty placeholders:
 
 ---
 
-## 4. Operating Principles (Enforced)
+## 4. Skills Initialization (Codex + Claude Code)
+
+This vault ships with reusable skills under `skills/`. Initialize them based on the agent you are using.
+
+### 4.1 Codex
+
+Codex discovers skills from `$CODEX_HOME/skills` (default: `~/.codex/skills`).
+
+Do one of the following:
+- **Symlink (preferred):** Link each skill folder into `$CODEX_HOME/skills/<vault-name>/`
+- **Copy:** Copy each skill folder into `$CODEX_HOME/skills/<vault-name>/`
+
+Example layout:
+```
+~/.codex/skills/personal-operating-system/clean-formatting/
+~/.codex/skills/personal-operating-system/project-action-item-analysis/
+...
+```
+
+### 4.2 Claude Code
+
+Claude Code discovers skills from `.claude/skills/` at the repo root.
+
+Do one of the following:
+- **Symlink (preferred):** Link each skill folder into `.claude/skills/`
+- **Copy:** Copy each skill folder into `.claude/skills/`
+
+Keep `skills/` as the source of truth. `.claude/skills/` is a mirror for discovery.
+
+If you are using only one agent, initialize only the relevant location.
+
+---
+
+## 5. Operating Principles (Enforced)
 
 - Capture is always raw and unstructured.
 - Sensemaking happens through distillation, not accumulation.
@@ -237,7 +274,7 @@ Optionally create the following empty placeholders:
 Do not introduce additional folders, templates, or taxonomies
 unless explicitly instructed.
 
-## 5. Mandatory Constitution Enforcement (Non-Negotiable)
+## 6. Mandatory Constitution Enforcement (Non-Negotiable)
 
 This vault is governed by the AI Constitution located at:
 _ai/constitution.md
@@ -246,7 +283,7 @@ The Constitution is binding and takes precedence over convenience, speed, defaul
 
 ---
 
-### 5.1 Codex Enforcement (AGENTS.md is Mandatory)
+### 6.1 Codex Enforcement (AGENTS.md is Mandatory)
 
 Codex enforces project behavior through `AGENTS.md` / `AGENTS.override.md`, which it reads automatically before doing any work.  
 
@@ -282,7 +319,7 @@ After any restart, context reset, or compaction, you MUST re-read `_ai/constitut
 before continuing. If you cannot confirm it is loaded, STOP and ask for confirmation.
 ```
 
-### 5.2 Claude Code Enforcement (CLAUDE.md or Append System Prompt)
+### 6.2 Claude Code Enforcement (CLAUDE.md or Append System Prompt)
 
 Claude Code supports instruction files (`CLAUDE.md`) and system prompt flags. For CLI and VS Code usage, the Constitution must be loaded via one of the approved methods below.
 
@@ -303,7 +340,7 @@ Example (CLI):
 claude --append-system-prompt "$(cat _ai/constitution.md)"
 ```
 
-### 5.3 Universal Stop Condition
+### 6.3 Universal Stop Condition
 
 If the agent cannot confirm that the Constitution is loaded and active:
 - It MUST stop.

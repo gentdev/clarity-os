@@ -118,6 +118,7 @@ Interact with your AI agent to help you:
 - propose next actions
 
 Create reusable prompts through skills for jobs you repeat often.
+Skills live in `skills/`; see `_ai/launch-vault.md` for Codex/Claude Code initialization.
 
 Extend your AI agent capabilities through MCP integrations.
 
@@ -136,4 +137,3 @@ MIT License.
 
 This repository provides a framework and templates only.
 No advice, guarantees, or outcomes are implied.
-
